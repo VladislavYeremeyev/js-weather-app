@@ -1,0 +1,111 @@
+* {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', sans-serif; }
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; }
+
+.header {
+  background-color: #3eb1df;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .header__date {
+    color: #ffffff;
+    font-weight: 400;
+    font-size: 13px;
+    padding: 15px; }
+
+.current-weather {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #21a5da;
+  flex-grow: 1;
+  height: calc(100vh - 190px); }
+  .current-weather__description {
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: 300;
+    margin-top: 10px; }
+  .current-weather__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 225px;
+    min-height: 225px;
+    font-size: 80px;
+    color: #ffffff;
+    background: #21a5da;
+    background: radial-gradient(circle closest-side, #53bbe5 0%, #53bbe5 55%, #46b6e3 56%, #46b6e3 64%, #39b1e1 65%, #39b1e1 73%, #2bacdf 74%, #2bacdf 82%, #22a8de 83%, #22a8de 91%, #21a5da 92%, #21a5da 100%); }
+  .current-weather__temperature {
+    font-weight: 300;
+    color: #ffffff;
+    letter-spacing: -6px;
+    font-size: 116px; }
+    .current-weather__temperature:after {
+      content: "";
+      display: inline-block;
+      width: 16px;
+      height: 16px;
+      background: radial-gradient(circle closest-side, transparent 0%, transparent 80%, #ffffff 81%, #ffffff 91%, transparent 91%, transparent 100%);
+      position: relative;
+      top: -75px; }
+  .current-weather__city {
+    font-weight: 300;
+    color: #ffffff;
+    font-size: 19px; }
+
+.days-menu {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+  .days-menu-item {
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 0;
+    background-color: #3db1df;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 15px 0px 20px; }
+    .days-menu-item:hover {
+      background-color: #1a93c4; }
+    .days-menu-item__icon {
+      font-size: 50px;
+      color: #ffffff; }
+      .days-menu-item__icon img {
+        width: 100px;
+        margin: -15px 0px; }
+    .days-menu-item__date {
+      color: #ffffff;
+      font-weight: 600; }
+  .days-menu-item_selected {
+    background-color: #1c9dd1; }
+    .days-menu-item_selected:hover {
+      cursor: default;
+      background-color: #1c9dd1; }
+
+.slider-wrapper {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  transition: transform .5s ease-out;
+  width: 305%; }
+  .slider-wrapper .slide {
+    width: 100vw;
+    float: left; }
+
+.scroller {
+  flex: 1;
+  overflow: hidden; }
+
+/*# sourceMappingURL=styles.css.map */

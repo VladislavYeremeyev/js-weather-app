@@ -1,0 +1,181 @@
+$header-color: #3eb1df;
+$text-color: #ffffff;
+$main-bg-color: #21a5da;
+$menu-color: #3db1df;
+$menu-selected-color: #1c9dd1;
+$weather-gradient-color: #ffffff;
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	font-family: 'Open Sans', sans-serif;
+}
+
+.app-container {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+.header {
+	background-color: $header-color;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__date {
+		color: $text-color;
+		font-weight: 400;
+		// font-size: 3.7vw;
+		font-size: 13px;
+		padding: 15px;
+	}
+}
+
+.current-weather {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background-color: $main-bg-color;
+	flex-grow: 1;
+	height: calc(100vh - 190px);
+
+	&__description {
+		// font-size: 5.8vw;
+		font-size: 24px;
+		color: $text-color;
+		font-weight: 300;
+		margin-top: 10px;
+	}
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-width: 225px;
+		min-height: 225px;
+		font-size: 80px;
+		color: $text-color;
+		background: $main-bg-color;
+		background: radial-gradient(
+			circle closest-side,
+			lighten($main-bg-color, 12%) 0%,
+			lighten($main-bg-color, 12%) 55%,
+			lighten($main-bg-color, 9%) 56%,
+			lighten($main-bg-color, 9%) 64%,
+			lighten($main-bg-color, 6%) 65%,
+			lighten($main-bg-color, 6%) 73%,
+			lighten($main-bg-color, 3%) 74%,
+			lighten($main-bg-color, 3%) 82%,
+			lighten($main-bg-color, 1%) 83%,
+			lighten($main-bg-color, 1%) 91%,
+			lighten($main-bg-color, 0%) 92%,
+			lighten($main-bg-color, 0%) 100%
+		);
+	}
+
+	&__temperature {
+		font-weight: 300;
+		color: $text-color;
+		letter-spacing: -6px;
+		font-size: 116px;
+
+		&:after {
+			content: "";
+			display: inline-block;
+			width: 16px;
+			height: 16px;
+			background: radial-gradient(
+				circle closest-side,
+				transparent 0%,
+				transparent 80%,
+				$text-color 81%,
+				$text-color 91%,
+				transparent 91%,
+				transparent 100%,
+			);
+			position: relative;
+			top: -75px;
+		}
+	}
+
+	&__city {
+		font-weight: 300;
+		color: $text-color;
+		font-size: 19px;	
+	}
+}
+
+.days-menu {
+	display: flex;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+
+	&-item {
+		display: flex;
+		flex-direction: column;
+		flex: 1 1 0;
+		background-color: $menu-color;
+		align-items: center;
+		justify-content: center;
+		cursor: pointer;
+		padding: 15px 0px 20px;
+
+
+		&:hover {
+			background-color: darken($menu-selected-color, 3%);
+		}
+
+		&__icon {
+			font-size: 50px;
+			color: $text-color;
+
+			img {
+				width: 100px;
+				margin: -15px 0px;
+			}
+		}
+
+		&__date {
+			color: $text-color;
+			font-weight: 600;
+		}
+	}
+
+	&-item_selected {
+		background-color: $menu-selected-color;
+
+		&:hover {
+			cursor: default;
+			background-color: $menu-selected-color;
+		}
+	}
+}
+
+.slider-wrapper {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	transition: transform .5s ease-out;
+	width: 305%;
+
+	.slide {
+		width: 100vw;
+		float: left;
+
+		// &:not(:nth-child(1)) {
+		// 	margin-left: -1px;
+		// }
+	}
+}
+
+.scroller {
+  flex: 1;
+  overflow: hidden;
+}
